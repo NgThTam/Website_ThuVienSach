@@ -79,22 +79,28 @@
     <div class="modal js_modal">      
         <div class="modal_login js_modal_login">
             <div class="modal_login_close">
-                <div class="modal_login_x js_modalClose">X</div>
+                <div class="modal_login_x js_modalClose">
+                    <img src="./main/image/x-removebg-preview.png" alt="">
+                </div>
             </div>
             <div class="modal_login_header">
                 LOGIN
             </div>
             <div class="modal_login_body">
-                <label for="" class="modal_login_label">TaiKhoan</label>
-                <input type="text" class="modal_login_input" placeholder="TaiKhoan">
-                <label for="" class="modal_login_label">MatKhau</label>
-                <input type="password" class="modal_login_input" placeholder="matkhau">
+                <div class="modal_taikhoan">
+                    <label for="" class="modal_login_label">User name</label>
+                    <input type="text" class="modal_login_input" placeholder="TaiKhoan">
+                </div>
+                <div class="modal_matkhau">
+                    <label for="" class="modal_login_label">Password</label>
+                    <input type="password" class="modal_login_input" placeholder="matkhau">
+                </div>
                 <button class="modal_login_login">
                     Login
                 </button>
             </div>
             <footer class="modal_login_footer">
-                <p class="modal_help">Need help?</p>
+                <p class="modal_help">Need <a href="#">help?</a></p>
             </footer>
         </div>
     </div>
