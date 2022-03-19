@@ -24,6 +24,19 @@ body {
 	z-index: 9;
 	position: relative;
 }
+.js_scroll_header {
+	position: fixed;
+	background-color: black;
+	animation: scrollH ease-in-out 0.5s;
+}
+@keyframes scrollH {
+	from {
+		transform: translateY(-100px);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
 .header_content {
 	/* width: 1170px; */
 	display: flex;
@@ -631,4 +644,31 @@ body {
 	width: 100%;
 	height: 100%;
 	object-position: center center;
+}
+/* back home */
+.back_home {
+	height: 40px;
+	width: 40px;
+	background-color: #01446f;
+}
+.link_back_home {
+	position: fixed;
+	z-index: 9999;
+	bottom: 20px;
+	right: 20px;
+	animation: backHome ease 0.5s;
+	display: none;
+}
+.js_back_home {
+	display: block;
+}
+@keyframes backHome {
+	from {
+		opacity: 0;
+		transform: translateY(60px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
