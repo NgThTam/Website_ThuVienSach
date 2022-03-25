@@ -9,7 +9,7 @@
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <div class="header" style="background-color:black;">
+    <div class="header js_header" style="background-color:black;">
         <div class="header_mid">
             <div class="header_content">
                 <div class="hd_logo">
@@ -36,16 +36,6 @@
                                 </a>
                             </li>
                             <li class="menu_list">
-                                <a href="#" class="menu_list_home">
-                                    <span class="list_color">Home</span>
-                                </a>
-                            </li>
-                            <li class="menu_list">
-                                <a href="#" class="menu_list_home">
-                                    <span class="list_color">Rules</span>
-                                </a>
-                            </li>
-                            <li class="menu_list">
                                 <a href="#" class="menu_list_home js_register">
                                     <span class="list_color">Register</span>
                                 </a>
@@ -55,13 +45,47 @@
                                     <span class="list_color">Login</span>
                                 </a>
                             </li>
+                            <li class="menu_list">
+                                <a href="#" class="menu_list_home">
+                                    <span class="list_color"><i class='bx bx-search-alt-2'></i></span>
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
     </div>
+    <div class="detail_body">
+        <div class="detail_book">
+            <div class="detail_img">
+                <img src="http://images.amazon.com/images/P/0002005018.01.LZZZZZZZ.jpg" alt="">
+            </div>
+            <div class="detail_info">
+                <div class="title_info">
+                    <h1 class="detail_titleBook">Clara Callan</h1>
+                </div>
+                <div class="content_info">
+                    <div class="detail_aut_book">By: <span>Richard Bruce Wright</span></div>
+                    <div class="detail_aut_book">Year-Of-Publication: <span>2001</span></div>
+                    <div class="detail_aut_book">Publisher: <span>HarperFlamingo Canada</span></div>
+                    <div class="detail_share">
+                        <!-- <div class="title_share">Share</div> -->
+                        <h1 class="detail_titleBook">Share</h1>
+                        <div class="list_share">
+                            <i class='bx bxl-facebook-circle fb'></i>
+                            <i class='bx bxl-messenger mes'></i>
+                            <i class='bx bxl-twitter tw'></i>
+                            <i class='bx bx-link-alt lin' ></i>
+                        </div>
+                    </div>
+                </div>             
+            </div>
+        </div>
+        <div class="detail_ml">
 
+        </div>
+    </div>
 
 
     <div class="footer">
@@ -110,19 +134,21 @@
             <div class="modal_login_header">
                 LOGIN
             </div>
-            <div class="modal_login_body">
-                <div class="modal_taikhoan">
-                    <label for="" class="modal_login_label">User name</label>
-                    <input type="text" class="modal_login_input" placeholder="TaiKhoan">
+            <form action=" ">
+                <div class="modal_login_body">
+                    <div class="modal_taikhoan">
+                        <label for="" class="modal_login_label"><i class='bx bxs-user'></i></label>
+                        <input id="login_tk" type="text" class="modal_login_input" placeholder="Email" value="2">
+                    </div>
+                    <div class="modal_matkhau">
+                        <label for="" class="modal_login_label"><i class='bx bxs-lock-alt'></i></label>
+                        <input type="password" class="modal_login_input" placeholder="Password">
+                    </div>
+                    <button class="modal_login_login">
+                        Login
+                    </button>
                 </div>
-                <div class="modal_matkhau">
-                    <label for="" class="modal_login_label">Password</label>
-                    <input type="password" class="modal_login_input" placeholder="matkhau">
-                </div>
-                <button class="modal_login_login">
-                    Login
-                </button>
-            </div>
+            </form>
             <footer class="modal_login_footer">
                 <p class="modal_help">Need <a href="#">help?</a></p>
             </footer>
@@ -134,6 +160,33 @@
                 <div class="modal_login_x js_close_register">
                     <img src="./main/image/x-removebg-preview.png" alt="">
                 </div>
+            </div>
+            <div class="modal_register_header">
+                Register
+            </div>
+            <div class="modal_register_content">
+                <div class="modal_register_name fl">
+                    <label for="">Full name (<span style="color: red;">*</span>)</label>
+                    <input type="text">
+                </div>
+                <div class="modal_register_mail fl">
+                    <label for="">Email (<span style="color: red;">*</span>)</label>
+                    <input type="email">
+                </div>
+                <div class="modal_register_pass fl">
+                    <label for="">Password (<span style="color: red;">*</span>)</label>
+                    <input type="password" name="a" id="a">
+                </div>
+                <div class="modal_register_repass fl">
+                    <label for="">Re-password (<span style="color: red;">*</span>)</label>
+                    <input type="password" name="a" id="b">
+                </div>
+                <div class="modal_but">
+                    <button>Start</button>
+                </div>
+                <!-- <div class="modal_register_footer">
+
+                </div> -->
             </div>
         </div>
     </div>

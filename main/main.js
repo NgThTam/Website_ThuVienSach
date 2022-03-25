@@ -37,14 +37,17 @@ close_register.addEventListener("click", closeModalRegister);
 modal_register.addEventListener("click", closeModalRegister);
 register_contern.addEventListener("click", event_modal);
 
-// Scroll fixed header
-const header = document.querySelector(".js_header");
-let headerHeight = header.clientHeight;
-window.addEventListener("scroll", function () {
-	let scrollHeight = window.pageYOffset;
-	if (scrollHeight > headerHeight - 10) {
-		header.classList.add("js_scroll_header");
+// scroll to top
+let BackTop = document.querySelector(".link_back_home");
+window.addEventListener("scroll", () => {
+	let scrollH = window.pageYOffset;
+	if (scrollH >= 100) {
+		BackTop.classList.add("js_back_home");
 	} else {
-		header.classList.remove("js_scroll_header");
+		BackTop.classList.remove("js_back_home");
 	}
 });
+
+var inplog = document.getElementById("login_tk");
+var but = document.querySelector(".modal_login_login");
+console.log(but);

@@ -649,7 +649,14 @@ body {
 .back_home {
 	height: 40px;
 	width: 40px;
-	background-color: #01446f;
+	border: 4px solid #01446f;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.link_back_home:hover .back_home {
+	background-color: #aadee2;
 }
 .link_back_home {
 	position: fixed;
@@ -672,3 +679,79 @@ body {
 		transform: translateY(0);
 	}
 }
+
+/* trang DetailBooks.html */
+
+.detail_body {
+	/* background-color: #efefef; */
+	/* padding-left: 130px;
+	padding-right: 130px; */
+	padding: 30px 130px;
+	display: flex;
+	justify-content: space-between;
+}
+.detail_book {
+	background-color: white;
+	width: 73%;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-radius: 7px;
+	box-shadow: 1px 1px 4px #544c4c;
+}
+.detail_ml {
+	background-color: #4b3939;
+	width: 25%;
+}
+.detail_img {
+	height: 20rem;
+	/* background-color: white; */
+	/* border: 1px solid black; */
+	width: 45%;
+	/* padding-top: 10px; */
+	/* padding-bottom: 10px; */
+	border-right: 1px solid #00000017;
+}
+.detail_img img {
+	object-fit: contain;
+	height: 100%;
+	width: 100%;
+}
+.detail_info {
+	width: 55%;
+	line-height: 40px;
+	padding-left: 10px;
+}
+.title_info {
+	font-size: 25px;
+	padding-bottom: 20px;
+}
+.detail_aut_book {
+	font-size: 20px;
+	color: #b1b7ba;
+}
+.detail_aut_book span {
+	color: black;
+}
+.list_share {
+	font-size: 25px;
+	/* padding-left: 20px; */
+}
+.list_share .fb {
+	color: blue;
+}
+.list_share .mes {
+	color: #2a88f4;
+}
+.listt_share .tw {
+	color: #25a2a4;
+}
+.list_share i {
+	font-size: 25px;
+	padding-left: 10px;
+}
+/* .detail_share {
+	text-align: center;
+	padding-top: 10px;
+} */
