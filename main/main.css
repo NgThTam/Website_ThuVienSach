@@ -59,9 +59,34 @@ body {
 .menu_list_home {
 	text-decoration: none;
 }
+.js_search {
+	padding-right: 2px;
+}
 .menu_list {
 	padding-right: 3em;
 }
+.search {
+	position: absolute;
+	bottom: 40%;
+	outline: none;
+	height: 25px;
+	font-size: 15px;
+	display: none;
+}
+.js_show_search {
+	display: inline;
+	animation: show ease 0.5s;
+}
+
+@keyframes show {
+	from {
+		width: 0;
+	}
+	to {
+		width: 185px;
+	}
+}
+
 .logo {
 	height: 100px;
 	width: 11rem;

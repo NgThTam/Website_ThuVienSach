@@ -7,6 +7,7 @@
     <title>BOOKs</title>
     <link rel="stylesheet" href="./main/main.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    
 </head>
 <body>
     <div class="main">
@@ -37,11 +38,6 @@
                                     </a>
                                 </li>                              
                                 <li class="menu_list">
-                                    <a href="#" class="menu_list_home">
-                                        <span class="list_color">Rules</span>
-                                    </a>
-                                </li>
-                                <li class="menu_list">
                                     <a href="#" class="menu_list_home js_register">
                                         <span class="list_color">Register</span>
                                     </a>
@@ -50,6 +46,12 @@
                                     <a class="menu_list_home js_login">
                                         <span class="list_color">Login</span>
                                     </a>
+                                </li>
+                                <li class="menu_list js_contai_search">
+                                    <a href="#" class="menu_list_home js_search">
+                                        <span class="list_color"><i class='bx bx-search-alt-2'></i></span>
+                                    </a>
+                                    <input type="text" class="search js_input_search" placeholder="key word">
                                 </li>
                             </ul>
                         </nav>
@@ -237,19 +239,21 @@
             <div class="modal_login_header">
                 LOGIN
             </div>
-            <div class="modal_login_body">
-                <div class="modal_taikhoan">
-                    <label for="" class="modal_login_label"><i class='bx bxs-user'></i></label>
-                    <input type="text" class="modal_login_input" placeholder="Email">
+            <form action="">
+                <div class="modal_login_body">
+                    <div class="modal_taikhoan">
+                        <label for="" class="modal_login_label"><i class='bx bxs-user'></i></label>
+                        <input type="text" class="modal_login_input" placeholder="Email">
+                    </div>
+                    <div class="modal_matkhau">
+                        <label for="" class="modal_login_label"><i class='bx bxs-lock-alt'></i></label>
+                        <input type="password" class="modal_login_input" placeholder="Password">
+                    </div>
+                    <button class="modal_login_login">
+                        Login
+                    </button>
                 </div>
-                <div class="modal_matkhau">
-                    <label for="" class="modal_login_label"><i class='bx bxs-lock-alt'></i></label>
-                    <input type="password" class="modal_login_input" placeholder="Password">
-                </div>
-                <button class="modal_login_login">
-                    Login
-                </button>
-            </div>
+            </form>
             <footer class="modal_login_footer">
                 <p class="modal_help">Need <a href="#">help?</a></p>
             </footer>
