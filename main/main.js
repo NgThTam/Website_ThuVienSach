@@ -53,11 +53,7 @@ let inpsearch = document.querySelector(".js_input_search");
 let contai = document.querySelector(".js_contai_search");
 // function ShowSearch(){}
 search.addEventListener("click", () => {
-	if (inpsearch.classList.length > 2) {
-		inpsearch.classList.remove("js_show_search");
-	} else {
-		inpsearch.classList.add("js_show_search");
-	}
+	inpsearch.classList.toggle("js_show_search");
 });
 document.addEventListener("click", () => {
 	inpsearch.classList.remove("js_show_search");
