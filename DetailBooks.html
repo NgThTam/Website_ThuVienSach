@@ -219,17 +219,17 @@
             <div class="modal_login_header">
                 LOGIN
             </div>
-            <form action="">
+            <form action="" class="js_form">
                 <div class="modal_login_body">
                     <div class="modal_taikhoan">
                         <label for="" class="modal_login_label"><i class='bx bxs-user'></i></label>
-                        <input id="login_tk" type="text" class="modal_login_input" placeholder="Email">
+                        <input type="text" class="modal_login_input js_login_tk" placeholder="Email" > 
                     </div>
                     <div class="modal_matkhau">
                         <label for="" class="modal_login_label"><i class='bx bxs-lock-alt'></i></label>
-                        <input type="password" class="modal_login_input" placeholder="Password">
+                        <input type="password" class="modal_login_input js_pass_login" placeholder="Password">
                     </div>
-                    <button class="modal_login_login">
+                    <button id="but_login" class="modal_login_login" type="submit">
                         Login
                     </button>
                 </div>

@@ -16,7 +16,15 @@ login.addEventListener("click", showModalLogin);
 close_login.addEventListener("click", closeModalLogin);
 modal_login.addEventListener("click", closeModalLogin);
 js_modal.addEventListener("click", modal_event);
-
+//login admin
+const form = document.querySelector(".js_form");
+form.addEventListener("submit", () => {
+	const ac = form[0].value;
+	const pass = form[1].value;
+	if ((ac == "admin") & (pass == "admin")) {
+		form.setAttribute("action", "./admin.html");
+	}
+});
 //open_close modal register
 
 const register = document.querySelector(".js_register");
