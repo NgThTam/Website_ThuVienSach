@@ -810,3 +810,77 @@ body {
 	/* box-shadow: 1px 1px 4px #544c4c; */
 	padding: 17px 17px 0px 17px;
 }
+/* Trang admin */
+.header_admin {
+	height: 70px;
+	background-color: black;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.admin {
+	color: #ffde3c;
+	font-size: 25px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-weight: 700;
+	cursor: default;
+	padding-left: 50px;
+}
+.header_admin a {
+	color: white;
+	font-size: 25px;
+	text-decoration: none;
+	display: flex;
+	padding-right: 30px;
+}
+.header_admin a:hover {
+	color: #ffde3c;
+}
+.pro_admin {
+	min-height: 43rem;
+	width: 20rem;
+	background-color: #000000f5;
+}
+.content_admin {
+	/* min-height: 28rem; */
+	width: calc(100% - 20rem);
+}
+.admin_main {
+	display: flex;
+	/* min-height: 28rem; */
+}
+.prof_ad {
+	/* height: 278px; */
+	text-align: center;
+	padding-top: 70px;
+}
+.prof_ad img {
+	height: 200px;
+	width: 200px;
+}
+.prof_ad p {
+	padding-top: 5px;
+	color: white;
+}
+.Ql_admin ul {
+	padding-top: 70px;
+	color: white;
+	/* background-color: #00bfc5; */
+}
+.Ql_admin ul li {
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 600;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	padding-left: 30px;
+	margin-top: 10px;
+}
+.Ql_admin ul li:hover {
+	background-color: #f7f2f238;
+}
+.Ql_admin ul li i {
+	padding-right: 7px;
+}
