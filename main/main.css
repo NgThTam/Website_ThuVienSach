@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@1,700&display=swap");
 * {
 	margin: 0;
 	padding: 0;
@@ -930,7 +931,7 @@ body {
 .books_inp {
 	height: 43px;
 	outline: none;
-	width: 295px;
+	width: 21%;
 	border: 1px solid #80808057;
 	padding-left: 10px;
 }
@@ -949,4 +950,94 @@ body {
 }
 .but_search:hover {
 	background-color: #00aac5;
+}
+.books_content {
+	display: flex;
+	padding: 0px 30px 30px 30px;
+	justify-content: space-between;
+}
+.books_menu {
+	min-height: 20rem;
+	border: 1px solid;
+	width: calc(23% + 14px);
+}
+.books_show {
+	border: 1px solid;
+	width: 74%;
+}
+.books_menu h1 {
+	font-family: "Noto Serif", serif;
+	border-bottom: 1px solid #00bac591;
+	padding-bottom: 6px;
+}
+.abook_image {
+	width: 250px;
+	height: 330px;
+}
+.abook_image img {
+	width: 100%;
+	height: 100%;
+	box-shadow: 0 0 12px 0 rgb(43 43 43 / 30%);
+}
+.books_abook {
+	width: 251px;
+}
+.abook_inf {
+	text-align: center;
+	padding: 5px 1px 0px 1px;
+}
+.abook_inf a {
+	font-size: 18px;
+}
+.abook_inf .aut_book {
+	font-size: 15px;
+}
+.abook_img_ho {
+	/* background: rgb(192 209 210 / 72%); */
+	width: 250px;
+	height: 330px;
+	position: relative;
+	bottom: 334px;
+	display: none;
+	align-items: flex-end;
+	justify-content: flex-end;
+	padding: 0px 22px 10px 0px;
+	flex-direction: column;
+}
+.abook_image:hover .abook_img_ho {
+	display: flex;
+	/* background: rgb(255 255 255 / 76%); */
+	background: #a1a6a780;
+}
+.abook_img_ho a {
+	font-size: 25px;
+	border: 3px solid;
+	height: 40px;
+	width: 40px;
+	border-radius: 100%;
+	margin-bottom: 7px;
+	color: #00bac5;
+	background-color: white;
+}
+.abook_img_ho a i {
+	position: relative;
+	top: 5px;
+	left: 4px;
+}
+@keyframes twoicon {
+	from {
+		transform: translateX(22px);
+	}
+	to {
+		transform: translateX(0px);
+	}
+}
+.abook_image:hover a {
+	animation: twoicon ease-in 0.2s;
+}
+.abook_image:hover .a2 {
+	animation: twoicon ease-in 0.3s;
+}
+.abook_image a:hover i {
+	color: red;
 }
