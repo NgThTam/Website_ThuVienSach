@@ -94,3 +94,10 @@ stars.forEach((star) => {
 		});
 	});
 });
+
+// books rating
+// const book_rating = document.querySelectorAll(".js_menu_ratings li");
+
+// book_rating.forEach((rating) => {
+// 	rating.addEventListener("mouseout", (e) => {});
+// });

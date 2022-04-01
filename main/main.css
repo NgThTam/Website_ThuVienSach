@@ -958,7 +958,7 @@ body {
 }
 .books_menu {
 	min-height: 20rem;
-	border: 1px solid;
+	/* border: 1px solid; */
 	width: calc(23% + 14px);
 }
 .books_show {
@@ -1040,4 +1040,55 @@ body {
 }
 .abook_image a:hover i {
 	color: red;
+}
+.books_menu_menu{
+	border: 1px solid;
+    min-height: 330px;
+}
+.books_menu_star{
+	margin-top: 5px;
+	/* border: 1px solid; */
+	
+}
+.books_menu_star ul{
+	list-style-type: none;
+    padding: 0px 0px 0px 2px;
+    font-size: 20px;
+	padding-top: 10px;
+}
+.star_empty {
+	color: #91918f85;
+}
+.books_menu_star ul li i{
+	padding-right: 5px;
+}
+.books_menu_star ul li{
+	padding-top: 5px;
+	/* max-width: 200px; */
+	cursor: pointer;
+}
+.books_menu_star ul li:hover{
+	/* background-color: #00aac5; */
+	box-shadow: 0px 0px 3px 0px #66606063;
+	padding-left: 20px;
+}
+.books_menu_star ul li span{
+	padding-left: 152px;
+    color: #048088;
+	display: none;
+}
+.star5:hover span{
+	display: inline;
+}
+.star4:hover span{
+	display: inline;
+}
+.star3:hover span{
+	display: inline;
+}
+.star2:hover span{
+	display: inline;
+}
+.star1:hover span{
+	display: inline;
 }
