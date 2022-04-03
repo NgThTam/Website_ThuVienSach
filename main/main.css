@@ -964,6 +964,9 @@ body {
 .books_show {
 	border: 1px solid;
 	width: 74%;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .books_menu h1 {
 	font-family: "Noto Serif", serif;
@@ -981,6 +984,7 @@ body {
 }
 .books_abook {
 	width: 251px;
+    padding-bottom: 30px;
 }
 .abook_inf {
 	text-align: center;
@@ -1091,4 +1095,38 @@ body {
 }
 .star1:hover span{
 	display: inline;
+}
+.show_option{
+	width: 74%;
+    margin-left: 30px;
+    border-bottom: 1px solid #00bac591;
+	display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.l_show_x4, .l_show_x3, .l_show_x2{
+	display: flex;
+	padding-bottom: 1px;
+}
+.l_show_x4 span{
+	border: 3px solid;
+    background-color: black;
+	margin-left: 1.5px;
+}
+.l_show_x3 span{
+	border: 3px solid;
+    background-color: black;
+	margin-left: 1.5px;
+}
+.l_show_x2 span{
+	border: 3px solid;
+    background-color: black;
+	margin-left: 1.5px;
+}
+.l_show_x2 .x2{
+	padding-right: 7px;
+}
+.show_x2,.show_x3,.show_x4{
+	margin-right: 10px;
+	cursor: pointer;
 }
