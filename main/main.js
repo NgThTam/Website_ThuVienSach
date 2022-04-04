@@ -101,3 +101,16 @@ stars.forEach((star) => {
 // book_rating.forEach((rating) => {
 // 	rating.addEventListener("mouseout", (e) => {});
 // });
+
+const classify = document.querySelectorAll(".js_classify li a");
+classify.forEach((cls) => {
+	cls.addEventListener("click", (e) => {
+		let eclas = e.target;
+
+		classify.forEach((clss) => {
+			clss.classList.remove("js_clas");
+			clss.classList.remove("all");
+		});
+		eclas.classList.add("js_clas");
+	});
+});

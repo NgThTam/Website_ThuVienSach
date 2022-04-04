@@ -962,7 +962,7 @@ body {
 	width: calc(23% + 14px);
 }
 .books_show {
-	border: 1px solid;
+	/* border: 1px solid; */
 	width: 74%;
 	display: flex;
     flex-wrap: wrap;
@@ -1046,7 +1046,7 @@ body {
 	color: red;
 }
 .books_menu_menu{
-	border: 1px solid;
+	/* border: 1px solid; */
     min-height: 330px;
 }
 .books_menu_star{
@@ -1129,4 +1129,46 @@ body {
 .show_x2,.show_x3,.show_x4{
 	margin-right: 10px;
 	cursor: pointer;
+}
+.show_x4 .l_show_x4 span{
+	border: 3px solid #097e85;
+    background-color: #097e85;
+}
+.show_x4:hover .l_show_x4 span{
+	border: 3px solid #097e85;
+    background-color: #097e85;
+}
+.show_x3:hover .l_show_x3 span{
+	border: 3px solid #097e85;
+    background-color: #097e85;
+}
+.show_x2:hover .l_show_x2 span{
+	border: 3px solid #097e85;
+    background-color: #097e85;
+}
+.classify{
+	list-style-type: none;
+    font-size: 18px;
+    font-family: sans-serif;
+    padding: 15px 0px 0px 10px;
+	line-height: 35px;
+	color: #909085;
+}
+.classify li a:hover{
+	cursor: pointer;
+	color: #00bac5;
+	font-weight: 600;
+}
+.year_pub{
+	display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+.js_clas{
+	color: #00bac5;
+	font-weight: 600;
+}
+.all{
+	color: #00bac5;
+	font-weight: 600;
 }
