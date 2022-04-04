@@ -1047,7 +1047,7 @@ body {
 }
 .books_menu_menu{
 	/* border: 1px solid; */
-    min-height: 330px;
+    min-height: 200px;
 }
 .books_menu_star{
 	margin-top: 5px;
@@ -1150,9 +1150,9 @@ body {
 	list-style-type: none;
     font-size: 18px;
     font-family: sans-serif;
-    padding: 15px 0px 0px 10px;
-	line-height: 35px;
-	color: #909085;
+    padding: 20px 0px 0px 10px;
+    line-height: 40px;
+    color: #909085;
 }
 .classify li a:hover{
 	cursor: pointer;
@@ -1160,9 +1160,19 @@ body {
 	font-weight: 600;
 }
 .year_pub{
-	display: flex;
-    flex-direction: column;
-    padding-left: 20px;
+	display: none;
+    padding-left: 30px;
+	flex-direction: row;
+    flex-wrap: wrap;
+	padding-right: 30px;
+}
+.year_pub span{
+	padding: 10px 20px 0px 0px;
+}
+.year_pub span a{
+	border: 1px solid;
+    padding: 5px;
+	cursor: pointer;
 }
 .js_clas{
 	color: #00bac5;
@@ -1171,4 +1181,13 @@ body {
 .all{
 	color: #00bac5;
 	font-weight: 600;
+}
+.js_show_year{
+	display: flex;
+}
+.classify i{
+	font-size: 22px;
+    position: relative;
+    top: 5px;
+    color: #088188;
 }

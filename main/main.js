@@ -101,7 +101,7 @@ stars.forEach((star) => {
 // book_rating.forEach((rating) => {
 // 	rating.addEventListener("mouseout", (e) => {});
 // });
-
+// menu classify
 const classify = document.querySelectorAll(".js_classify li a");
 classify.forEach((cls) => {
 	cls.addEventListener("click", (e) => {
@@ -113,4 +113,16 @@ classify.forEach((cls) => {
 		});
 		eclas.classList.add("js_clas");
 	});
+});
+
+const year_content = document.querySelector(".js_year_pub");
+const year_pub = document.querySelector(".js_year");
+year_pub.addEventListener("click", () => {
+	year_content.classList.toggle("js_show_year");
+	let year_class = year_content.getAttribute("class");
+	if (year_class.includes("js_show_year")) {
+		year_pub.innerHTML = "Year of Publication <i class='bx bx-chevron-up'></i>";
+	} else {
+		year_pub.innerHTML = "Year of Publication <i class='bx bx-chevron-down'>";
+	}
 });
