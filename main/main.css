@@ -1232,3 +1232,21 @@ body {
 .content_author li{
 	padding: 0px 20px 6px 0px;
 }
+.publisher{
+	display: none;
+	flex-direction: column;
+	padding-left: 20px;
+}
+.js_show_publisher{
+	display: flex;
+}
+.publisher a{
+	cursor: pointer;
+	padding: 10px;
+}
+.publisher a:hover{
+	background-color: #bdefee3d;
+    border-radius: 14px;
+    font-weight: 600;
+    color: #6c6767;
+}

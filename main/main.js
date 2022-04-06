@@ -126,3 +126,15 @@ year_pub.addEventListener("click", () => {
 		year_pub.innerHTML = "Year of Publication <i class='bx bx-chevron-down'>";
 	}
 });
+
+const titlePub = document.querySelector(".js_title_pub");
+const pub_content = document.querySelector(".js_content_pub");
+titlePub.addEventListener("click", () => {
+	pub_content.classList.toggle("js_show_publisher");
+	let pub_class = pub_content.getAttribute("class");
+	if (pub_class.includes("js_show_publisher")) {
+		titlePub.innerHTML = "Publisher <i class='bx bx-chevron-up'></i>";
+	} else {
+		titlePub.innerHTML = "Publisher <i class='bx bx-chevron-down'>";
+	}
+});
