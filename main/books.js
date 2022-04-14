@@ -40,7 +40,7 @@ fetchBooks()
 					<div class="abook_image">
 						<img src="${book.ImgB}" alt="" class="abook_img">
 						<div class="abook_img_ho">
-							<a class="js_lbk" href="#"><i class='bx bx-show'></i></a>
+							<a data-id="${book.IDb}" class="js_lbk" href="#"><i data-id="${book.IDb}" class='bx bx-show'></i></a>
 							<a href="#" class="a2"><i class='bx bx-heart'></i></a>
 						</div>
 					</div>
@@ -53,6 +53,10 @@ fetchBooks()
 		showBook.innerHTML = abook;
 	})
 	.then(() => {
-		const asd = document.querySelectorAll(".abook_image");
-		console.log(asd);
+		const abooks = document.querySelectorAll(".js_lbk");
+		abooks.forEach((abook) => {
+			abook.addEventListener("click", (e) => {
+				console.log(e.target.dataset.id);
+			});
+		});
 	});
