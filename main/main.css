@@ -964,10 +964,49 @@ body {
 }
 .books_show {
 	/* border: 1px solid; */
-	width: 74%;
+	/* width: 74%; */
 	display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+.scr_book{
+	width: 74%;
+}
+.books_page{
+	height: 70px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	border-top: 1px solid #c1c6c691;
+}
+.books_number{
+	display: flex;
+    list-style-type: none;
+	padding-top: 20px;
+}
+.books_number li{
+	font-size: 20px;
+	font-weight: 400;
+	font-family: sans-serif;
+	display: flex;
+	align-items: center;
+	padding: 2px 8px;
+	cursor: pointer;
+	margin: 0px 5px;
+}
+.books_number li i{
+	background-color: #93b9bd52;
+}
+.books_number li:hover{
+	border-radius: 15px;
+	background-color: #00bac5;
+	color: white;
+}
+.page1{
+	border: 1px solid;
+    border-radius: 15px;
+	background-color: #00bac5;
+	color: white;
 }
 .books_menu h1 {
 	font-family: "Noto Serif", serif;

@@ -138,3 +138,15 @@ titlePub.addEventListener("click", () => {
 		titlePub.innerHTML = "Publisher <i class='bx bx-chevron-down'>";
 	}
 });
+
+// books page
+
+const pages = document.querySelectorAll(".js_page");
+pages.forEach((page) => {
+	page.addEventListener("click", (e) => {
+		pages.forEach((pa) => {
+			pa.classList.remove("page1");
+		});
+		e.target.classList.add("page1");
+	});
+});
