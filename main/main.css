@@ -967,8 +967,18 @@ body {
 	/* width: 74%; */
 	display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
+
+.books_show > div {
+	width: calc((100% - (3 * 20px)) / 4);
+	margin-right: 20px;
+}
+
+.books_show > div:nth-child(4n) {
+	margin-right: 0;
+}
+
 .scr_book{
 	width: 74%;
 }

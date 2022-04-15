@@ -28,32 +28,69 @@ const fetchBooks = async () => {
 
 	return books;
 };
-
+const showBook = document.getElementById("js_show_book");
+const renderBook = (book) => {
+	return `<div id="${book.IDb}" class="books_abook">
+				<div class="abook_image">
+					<img src="${book.ImgB}" alt="" class="abook_img">
+					<div class="abook_img_ho">
+						<a data-id="${book.IDb}" class="js_lbk" href="./DetailBooks.html"><i data-id="${book.IDb}" class='bx bx-show'></i></a>
+						<a href="#" class="a2"><i class='bx bx-heart'></i></a>
+					</div>
+				</div>
+				<div class="abook_inf">
+					<a href="./DetailBooks.html" class="title_book">${book.NameB}</a>
+					<div class="aut_book">By: <span>${book.Author}</span></div>
+				</div>
+			</div>`;
+};
 fetchBooks()
 	.then((books) => {
-		const showBook = document.getElementById("js_show_book");
 		const abook = books.map((book) => {
-			return `<div id="${book.IDb}" class="books_abook">
-					<div class="abook_image">
-						<img src="${book.ImgB}" alt="" class="abook_img">
-						<div class="abook_img_ho">
-							<a data-id="${book.IDb}" class="js_lbk" href="./DetailBooks.html"><i data-id="${book.IDb}" class='bx bx-show'></i></a>
-							<a href="#" class="a2"><i class='bx bx-heart'></i></a>
-						</div>
-					</div>
-					<div class="abook_inf">
-						<a href="./DetailBooks.html" class="title_book">${book.NameB}</a>
-						<div class="aut_book">By: <span>${book.Author}</span></div>
-					</div>
-				</div>`;
+			return renderBook(book);
 		});
-		showBook.innerHTML = abook;
+		showBook.innerHTML = abook.join(" ");
+		return books;
 	})
-	.then(() => {
+	.then((ab) => {
 		const abooks = document.querySelectorAll(".js_lbk");
 		abooks.forEach((abook) => {
 			abook.addEventListener("click", (e) => {
 				localStorage.setItem("id_book", e.target.dataset.id);
 			});
 		});
+		return ab;
+	})
+	.then((ab) => {
+		//show all
+		const bookAll = document.querySelector(".js_all");
+		bookAll.addEventListener("click", () => {
+			const booksAll = ab.map((booka) => {
+				return renderBook(booka);
+			});
+			showBook.innerHTML = booksAll.join(" ");
+		});
+		//show yearpub
+		const textYear = document.querySelectorAll(".js_year_pub span a");
+		textYear.forEach((y) => {
+			y.addEventListener("click", (e) => {
+				const newBooks = filterY(ab, y.innerText);
+				const abook = newBooks.map((newbook) => {
+					return renderBook(newbook);
+				});
+				showBook.innerHTML = abook.join(" ");
+				const abooks = document.querySelectorAll(".js_lbk");
+				abooks.forEach((abook) => {
+					abook.addEventListener("click", (e) => {
+						localStorage.setItem("id_book", e.target.dataset.id);
+					});
+				});
+			});
+		});
 	});
+
+// console.log(dtBooks);
+
+const filterY = function (books, year) {
+	return books.filter((book) => book.YearPub === year);
+};
