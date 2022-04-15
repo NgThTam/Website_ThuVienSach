@@ -13,8 +13,6 @@ const fetchBooks = async () => {
 	const books = [];
 	const querySnapshot = await getDocs(collection(db, "books"));
 	querySnapshot.forEach((doc) => {
-		// doc.data() is never undefined for query doc snapshots
-		// console.log(doc.id, " => ", doc.data());
 		books.push(doc.data());
 	});
 
@@ -34,7 +32,6 @@ const fetchBooks = async () => {
 fetchBooks()
 	.then((books) => {
 		const showBook = document.getElementById("js_show_book");
-
 		const abook = books.map((book) => {
 			return `<div id="${book.IDb}" class="books_abook">
 					<div class="abook_image">
