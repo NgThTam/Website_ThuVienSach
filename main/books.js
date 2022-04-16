@@ -87,6 +87,40 @@ fetchBooks()
 				});
 			});
 		});
+		//show publiser
+		const publisers = document.querySelectorAll(".js_content_pub span a");
+		publisers.forEach((pub) => {
+			pub.addEventListener("click", () => {
+				const newPubs = filterX(ab, pub.innerText);
+				const abook = newPubs.map((newpub) => {
+					return renderBook(newpub);
+				});
+				showBook.innerHTML = abook.join(" ");
+				const abooks = document.querySelectorAll(".js_lbk");
+				abooks.forEach((abook) => {
+					abook.addEventListener("click", (e) => {
+						localStorage.setItem("id_book", e.target.dataset.id);
+					});
+				});
+			});
+		});
+		//show author
+		const authors = document.querySelectorAll(".js_author li a");
+		authors.forEach((author) => {
+			author.addEventListener("click", () => {
+				const newAuthors = filterA(ab, author.innerText);
+				const abook = newAuthors.map((newAuthor) => {
+					return renderBook(newAuthor);
+				});
+				showBook.innerHTML = abook.join(" ");
+				const abooks = document.querySelectorAll(".js_lbk");
+				abooks.forEach((abook) => {
+					abook.addEventListener("click", (e) => {
+						localStorage.setItem("id_book", e.target.dataset.id);
+					});
+				});
+			});
+		});
 	});
 
 // console.log(dtBooks);
@@ -94,3 +128,8 @@ fetchBooks()
 const filterY = function (books, year) {
 	return books.filter((book) => book.YearPub === year);
 };
+const filterX = (books, publiser) =>
+	books.filter((book) => book.Publiser === publiser);
+
+const filterA = (books, author) =>
+	books.filter((book) => book.Author === author);
