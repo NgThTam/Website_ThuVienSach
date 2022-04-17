@@ -121,6 +121,45 @@ fetchBooks()
 				});
 			});
 		});
+		//show star
+		const fetchRatings = async () => {
+			const ratings = [];
+			const querySnapshot = await getDocs(collection(db, "ratings"));
+			querySnapshot.forEach((doc) => {
+				ratings.push(doc.data());
+			});
+
+			// const clickStars = document.querySelectorAll(".js_menu_ratings > li");
+			// clickStars.forEach((clickstar) => {
+			// 	clickstar.addEventListener("click", () => {
+			// 		const newStar = ratings.filter((bkstar) => {
+			// 			return bkstar.Star <= clickstar.dataset.star;
+			// 		});
+			// 		const idbooks = newStar.map((st) => {
+			// 			return st.IDb;
+			// 		});
+
+			// 	});
+			// });
+
+			// const listID = ab.map((abook) => {
+			// 	return abook.IDb;
+			// });
+
+			const newBookList = ab.map((book) => {
+				const listBookById = ratings.filter(
+					(rating) => rating.IDb === book.IDb
+				);
+
+				const avgStars =
+					listBookById.reduce((sum, curr) => sum + curr.Star, 0) /
+					listBookById.length;
+				return { ...book, avgStars };
+			});
+
+			console.log(newBookList);
+		};
+		fetchRatings();
 	});
 
 // console.log(dtBooks);
@@ -133,3 +172,11 @@ const filterX = (books, publiser) =>
 
 const filterA = (books, author) =>
 	books.filter((book) => book.Author === author);
+const mean = (arr) => {
+	let smean = 0;
+	const length = arr.length;
+	arr.forEach((value) => {
+		smean += value.Star;
+	});
+	return smean / length;
+};
