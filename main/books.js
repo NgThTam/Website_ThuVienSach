@@ -129,23 +129,6 @@ fetchBooks()
 				ratings.push(doc.data());
 			});
 
-			// const clickStars = document.querySelectorAll(".js_menu_ratings > li");
-			// clickStars.forEach((clickstar) => {
-			// 	clickstar.addEventListener("click", () => {
-			// 		const newStar = ratings.filter((bkstar) => {
-			// 			return bkstar.Star <= clickstar.dataset.star;
-			// 		});
-			// 		const idbooks = newStar.map((st) => {
-			// 			return st.IDb;
-			// 		});
-
-			// 	});
-			// });
-
-			// const listID = ab.map((abook) => {
-			// 	return abook.IDb;
-			// });
-
 			const newBookList = ab.map((book) => {
 				const listBookById = ratings.filter(
 					(rating) => rating.IDb === book.IDb
@@ -157,7 +140,28 @@ fetchBooks()
 				return { ...book, avgStars };
 			});
 
-			console.log(newBookList);
+			const clickStars = document.querySelectorAll(".js_menu_ratings > li");
+			clickStars.forEach((clickstar) => {
+				clickstar.addEventListener("click", () => {
+					const fstar = clickstar.dataset.star;
+					let newStars = [];
+					if (fstar == 2) {
+						newStars = filterStar1(newBookList, 0, 2);
+					} else {
+						newStars = filterStar(newBookList, fstar - 2, fstar);
+					}
+					const abook = newStars.map((newStar) => {
+						return renderBook(newStar);
+					});
+					showBook.innerHTML = abook.join(" ");
+					const abooks = document.querySelectorAll(".js_lbk");
+					abooks.forEach((abook) => {
+						abook.addEventListener("click", (e) => {
+							localStorage.setItem("id_book", e.target.dataset.id);
+						});
+					});
+				});
+			});
 		};
 		fetchRatings();
 	});
@@ -172,11 +176,15 @@ const filterX = (books, publiser) =>
 
 const filterA = (books, author) =>
 	books.filter((book) => book.Author === author);
-const mean = (arr) => {
-	let smean = 0;
-	const length = arr.length;
-	arr.forEach((value) => {
-		smean += value.Star;
-	});
-	return smean / length;
-};
+const filterStar = (books, start, end) =>
+	books.filter((book) => book.avgStars > start && book.avgStars <= end);
+const filterStar1 = (books, start, end) =>
+	books.filter((book) => book.avgStars >= start && book.avgStars < end);
+// const mean = (arr) => {
+// 	let smean = 0;
+// 	const length = arr.length;
+// 	arr.forEach((value) => {
+// 		smean += value.Star;
+// 	});
+// 	return smean / length;
+// };
