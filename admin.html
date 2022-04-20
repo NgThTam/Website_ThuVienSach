@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./main/main.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
+<style>
+    html{
+        font-family: arial, sans-serif;
+    }
+</style>
 <body>
     <div class="header_admin">
         <div class="admin">Ad<span style="color: white;">min</span></div>
@@ -30,11 +35,48 @@
         </div>
         <div class="content_admin">
             <div id="scr1" class="scr js_scr js_show_scr" style="font-size: 50px;">a</div>
-            <div id="scr2" class="scr js_scr" style="font-size: 50px;">b</div>
-            <div id="scr3" class="scr js_scr" style="font-size: 50px;">c</div>
+            <div id="scr2" class="scr js_scr" style="font-size: 50px;">
+                <h5 class="title_admin_book">Books management</h5>
+                <div class="table">
+                    <table class="table_books">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name Book</th>
+                                <th>Author</th>
+                                <th>Publiser</th>
+                                <th>Publishing year</th>
+                              </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+            <div id="scr3" class="scr js_scr" style="font-size: 50px;">
+                <h5 class="title_admin_book">Books rating</h5>
+                <div class="table">
+                    <table class="table_books">
+                        <thead>
+                            <tr>
+                                <th>ID User</th>
+                                <th>ID Book</th>
+                                <th>Name Book</th>
+                                <th>Rating value</th>
+                              </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                      </table>
+                </div>
+            </div>
         </div>
     </div>
 </body>
+<scrip src="./main/firebase.js"></scrip>
+<script type="module" src="./main/admin_data.js"></script>
 <script src="./main/admin.js"></script>
 <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
 </html>

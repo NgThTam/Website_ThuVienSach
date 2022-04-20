@@ -74,6 +74,13 @@ const fetchRatings = async () => {
 		ratings.push(doc.data());
 	});
 
+	// const docRef = await addDoc(collection(db, "ratings"), {
+	// 	IDb: "0441783589",
+	// 	Star: 9,
+	// });
+	//0804106304,0312970242,0140067477,0441783589
+	// console.log(ratings);
+
 	const detailbook = ratings.filter(
 		(rating) => rating.IDb === localStorage.getItem("id_book")
 	);

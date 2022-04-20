@@ -35,7 +35,7 @@ titlePub.addEventListener("click", () => {
 	}
 });
 
-// books page
+// books page color
 
 const pages = document.querySelectorAll(".js_page");
 pages.forEach((page) => {
@@ -47,4 +47,17 @@ pages.forEach((page) => {
 	});
 });
 
-// console.log(localStorage.getItem("id"));
+// books page/page*3
+const srcshows = document.querySelectorAll(".js_srcs");
+
+pages.forEach((pg) => {
+	pg.addEventListener("click", () => {
+		srcshows.forEach((srcshow) => {
+			if (pg.id === srcshow.dataset.page) {
+				srcshow.classList.add("books_show");
+			} else {
+				srcshow.classList.remove("books_show");
+			}
+		});
+	});
+});

@@ -5,8 +5,6 @@ import {
 	doc,
 } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
-// import pandas from "https://cdn.jsdelivr.net/npm/pandas-js@0.2.4/dist/index.min.js";
-
 import db from "./firebase.js";
 
 const fetchBooks = async () => {
@@ -17,18 +15,20 @@ const fetchBooks = async () => {
 	});
 
 	// const docRef = await addDoc(collection(db, "books"), {
-	// 	IDb: "empty",
-	// 	NameB: "",
-	// 	Author: "",
-	// 	YearPub: "",
-	// 	Publiser: "",
-	// 	ImgB: "",
+	// 	IDb: "0441783589",
+	// 	NameB: "Starship Troopers",
+	// 	Author: "Robert A. Heinlein",
+	// 	YearPub: "1987",
+	// 	Publiser: "Ace Books",
+	// 	ImgB: "http://images.amazon.com/images/P/0441783589.01.LZZZZZZZ.jpg",
 	// });
 	// console.log(books);
-
+	//0804106304,0312970242,0140067477,0441783589
 	return books;
 };
 const showBook = document.getElementById("js_show_book");
+const showBook2 = document.getElementById("js_show_book2");
+
 const renderBook = (book) => {
 	return `<div id="${book.IDb}" class="books_abook">
 				<div class="abook_image">
@@ -46,10 +46,23 @@ const renderBook = (book) => {
 };
 fetchBooks()
 	.then((books) => {
-		const abook = books.map((book) => {
+		const newListBook = [];
+		const newListBook2 = [];
+		books.forEach((book, ind) => {
+			if (ind < 12) {
+				newListBook.push(book);
+			} else if (ind < 24) {
+				newListBook2.push(book);
+			}
+		});
+		const abook = newListBook.map((book) => {
+			return renderBook(book);
+		});
+		const abook2 = newListBook2.map((book) => {
 			return renderBook(book);
 		});
 		showBook.innerHTML = abook.join(" ");
+		showBook2.innerHTML = abook2.join(" ");
 		return books;
 	})
 	.then((ab) => {
@@ -65,10 +78,22 @@ fetchBooks()
 		//show all
 		const bookAll = document.querySelector(".js_all");
 		bookAll.addEventListener("click", () => {
-			const booksAll = ab.map((booka) => {
-				return renderBook(booka);
+			const newbooksAll = [];
+			ab.forEach((booka, index) => {
+				if (index < 12) {
+					newbooksAll.push(booka);
+				}
+			});
+			const booksAll = newbooksAll.map((book) => {
+				return renderBook(book);
 			});
 			showBook.innerHTML = booksAll.join(" ");
+			const abooks = document.querySelectorAll(".js_lbk");
+			abooks.forEach((abook) => {
+				abook.addEventListener("click", (e) => {
+					localStorage.setItem("id_book", e.target.dataset.id);
+				});
+			});
 		});
 		//show yearpub
 		const textYear = document.querySelectorAll(".js_year_pub span a");
@@ -128,7 +153,6 @@ fetchBooks()
 			querySnapshot.forEach((doc) => {
 				ratings.push(doc.data());
 			});
-
 			const newBookList = ab.map((book) => {
 				const listBookById = ratings.filter(
 					(rating) => rating.IDb === book.IDb
@@ -164,6 +188,32 @@ fetchBooks()
 			});
 		};
 		fetchRatings();
+		return ab;
+	})
+	.then((ab) => {
+		const boxSearch = document.getElementById("boxsearch");
+		boxSearch.addEventListener("keyup", () => {
+			let Textvalue = boxSearch.value.toUpperCase();
+			console.log(Textvalue);
+			const re = new RegExp(`${Textvalue}`);
+			const newSearch = [];
+			ab.forEach((book) => {
+				let textname = book.NameB.toUpperCase();
+				if (re.test(textname)) {
+					newSearch.push(book);
+				}
+			});
+			const abook = newSearch.map((book) => {
+				return renderBook(book);
+			});
+			showBook.innerHTML = abook.join(" ");
+			const abooks = document.querySelectorAll(".js_lbk");
+			abooks.forEach((abook) => {
+				abook.addEventListener("click", (e) => {
+					localStorage.setItem("id_book", e.target.dataset.id);
+				});
+			});
+		});
 	});
 
 // console.log(dtBooks);
