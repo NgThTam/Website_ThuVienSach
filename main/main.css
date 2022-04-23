@@ -965,7 +965,14 @@ body {
 	text-align: left;
 	padding: 8px;
 }
-
+.view{
+	text-align: center;
+}
+.view a i{
+	font-size: 20px;
+	position: relative;
+	top:3px;
+}
 /* trang books */
 .books_search {
 	padding: 30px;

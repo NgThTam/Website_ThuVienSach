@@ -3,9 +3,29 @@ import {
 	getDocs,
 	addDoc,
 	doc,
+	updateDoc,
 } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
 
 import db from "./firebase.js";
+
+// Set the "capital" field of the city 'DC'
+
+// const asd = async () => {
+// 	const washingtonRef = doc(db, "users", "urmMaqQrkQkQsz2eISPF");
+// 	await updateDoc(washingtonRef, {
+// 		FullName: "dataset",
+// 		Email: "dattaset",
+// 		Pass: "dataset",
+// 	});
+// };
+// asd();
+const render1 = (user) => {
+	return `<tr>
+                <td>${user.IDu}</td>
+                <td>${user.Addr}</td>
+                <td>${user.Old}</td>
+            </tr>`;
+};
 
 const render2 = (book) => {
 	return `<tr>
@@ -14,11 +34,14 @@ const render2 = (book) => {
                 <td>${book.Author}</td>
                 <td>${book.Publiser}</td>
                 <td>${book.YearPub}</td>
+				<td style="text-align: center;" class="view js_view">
+					<a id="${book.IDb}" href="./DetailBooks.html"><i class='bx bx-show'></i></a>
+				</td>
             </tr>`;
 };
 const render3 = (book) => {
 	return `<tr>
-                <td>01001001</td>
+                <td>${book.IDu}</td>
                 <td>${book.IDb}</td>
                 <td>${book.name}</td>
                 <td>${book.Star}</td>
@@ -45,6 +68,26 @@ fetchBooks()
 		return bks;
 	})
 	.then((bks) => {
+		const fetchusers = async () => {
+			const users = [];
+			const querySnapshot = await getDocs(collection(db, "users"));
+			querySnapshot.forEach((doc) => {
+				users.push(doc.data());
+			});
+
+			const newUers = users.map((user) => {
+				return render1(user);
+			});
+			const scr1 = document.querySelector("#scr1 table > tbody");
+			scr1.innerHTML = newUers.join(" ");
+			const detailViews = document.querySelectorAll(".js_view > a");
+			detailViews.forEach((detailView) => {
+				detailView.addEventListener("click", () => {
+					localStorage.setItem("id_book", detailView.id);
+				});
+			});
+		};
+		fetchusers();
 		const fetcRatings = async () => {
 			const ratings = [];
 			const querySnapshot = await getDocs(collection(db, "ratings"));
