@@ -1389,3 +1389,6 @@ body {
     font-weight: 600;
     color: #6c6767;
 }
+.js_logout{
+	display: flex;
+}
