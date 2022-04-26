@@ -50,12 +50,12 @@
                                         </a>
                                     </li> -->
                                 </div>                              
-                                <li class="menu_list js_contai_search">
+                                <!-- <li class="menu_list js_contai_search">
                                     <a href="#" class="menu_list_home js_search">
                                         <span class="list_color"><i class='bx bx-search-alt-2'></i></span>
                                     </a>
                                     <input type="text" class="search js_input_search" placeholder="key word">
-                                </li>
+                                </li> -->
                             </ul>
                         </nav>
                     </div>
@@ -70,7 +70,7 @@
                     <p>where you can find books from the best-selling series</p> 
                 </div>
                 <div class="start">
-                    <a href="#" class="start_content">Start searching now</a>
+                    <a href="./books.html" class="start_content">Start searching now</a>
                 </div> 
             </div>
             
@@ -272,30 +272,56 @@
             <div class="modal_register_header">
                 Register
             </div>
-            <div class="modal_register_content">
-                <div class="modal_register_name fl">
-                    <label for="">Full name (<span style="color: red;">*</span>)</label>
-                    <input type="text">
+            <form action="" id="formR">
+                <div class="modal_register_content">
+                    <div class="modal_register_name fl">
+                        <label for="">Full name (<span style="color: red;">*</span>)</label>
+                        <div class="vali">
+                            <input class="js_vali_input" type="text">
+                            <small></small>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="modal_register_birthday fl">
+                        <label for="">Birthday (<span style="color: red;">*</span>)</label>
+                        <div class="vali">
+                            <input class="js_vali_input" type="date">
+                            <small></small>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="modal_register_mail fl">
+                        <label for="">Email (<span style="color: red;">*</span>)</label>
+                        <div class="vali">
+                            <input class="js_vali_input" type="email">
+                            <small></small>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="modal_register_pass fl">
+                        <label for="">Password (<span style="color: red;">*</span>)</label>
+                        <div class="vali">
+                            <input class="js_vali_input" type="password">
+                            <small></small>
+                            <span class=""></span>
+                        </div>
+                    </div>
+                    <div class="modal_register_repass fl">
+                        <label for="">Re-password (<span style="color: red;">*</span>)</label>
+                        <div class="vali">
+                            <input class="js_vali_input" type="password">
+                            <small></small>
+                            <span class=""></span>
+                        </div>
+                    </div>
+                    <div class="modal_but">
+                        <button type="submit">Start</button>
+                    </div>
+                    <!-- <div class="modal_register_footer">
+    
+                    </div> -->
                 </div>
-                <div class="modal_register_mail fl">
-                    <label for="">Email (<span style="color: red;">*</span>)</label>
-                    <input type="email">
-                </div>
-                <div class="modal_register_pass fl">
-                    <label for="">Password (<span style="color: red;">*</span>)</label>
-                    <input type="password" name="a" id="a">
-                </div>
-                <div class="modal_register_repass fl">
-                    <label for="">Re-password (<span style="color: red;">*</span>)</label>
-                    <input type="password" name="a" id="b">
-                </div>
-                <div class="modal_but">
-                    <button>Start</button>
-                </div>
-                <!-- <div class="modal_register_footer">
-
-                </div> -->
-            </div>
+            </form>
         </div>
     </div>
     <a href="#" class="link_back_home" >
@@ -307,7 +333,7 @@
 <script type="module" src="./main/index.js"></script>
 <script src="./main/main.js"></script>
 <script type="module" src="./main/Login.js"></script>
-
+<script src="./main/register.js"></script>
 <script src="./main/scroll_header.js"></script>
 <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
 </html>

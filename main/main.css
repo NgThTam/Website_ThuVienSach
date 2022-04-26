@@ -1392,3 +1392,33 @@ body {
 .js_logout{
 	display: flex;
 }
+/* form validate */
+.vali span{
+	left: 0;
+    width: 0;
+    border-bottom: 3px solid #25c1c7;
+    position: absolute;
+    bottom: 0;
+	transition: 0.3s;
+}
+.vali .ckeck{
+    bottom : 42%;
+
+}
+.vali input{
+	width: 100%;
+}
+.vali{
+	position: relative;
+    width: 70%;
+}
+.vali input:focus ~ span{
+	width: 100%;
+}
+.error small{
+	color: #ff0000d4;
+}
+.error input{
+	border-bottom: 2px solid #ff0000d4;
+	transition: 0.3s;
+}
