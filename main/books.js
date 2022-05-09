@@ -28,6 +28,7 @@ const fetchBooks = async () => {
 };
 const showBook = document.getElementById("js_show_book");
 const showBook2 = document.getElementById("js_show_book2");
+const showBook3 = document.getElementById("js_show_book3");
 
 const renderBook = (book) => {
 	return `<div id="${book.IDb}" class="books_abook">
@@ -48,11 +49,14 @@ fetchBooks()
 	.then((books) => {
 		const newListBook = [];
 		const newListBook2 = [];
+		const newListBook3 = [];
 		books.forEach((book, ind) => {
 			if (ind < 12) {
 				newListBook.push(book);
 			} else if (ind < 24) {
 				newListBook2.push(book);
+			} else if (ind < 36) {
+				newListBook3.push(book);
 			}
 		});
 		const abook = newListBook.map((book) => {
@@ -61,8 +65,12 @@ fetchBooks()
 		const abook2 = newListBook2.map((book) => {
 			return renderBook(book);
 		});
+		const abook3 = newListBook3.map((book) => {
+			return renderBook(book);
+		});
 		showBook.innerHTML = abook.join(" ");
 		showBook2.innerHTML = abook2.join(" ");
+		showBook3.innerHTML = abook3.join(" ");
 		return books;
 	})
 	.then((ab) => {
@@ -100,7 +108,13 @@ fetchBooks()
 		textYear.forEach((y) => {
 			y.addEventListener("click", (e) => {
 				const newBooks = filterY(ab, y.innerText);
-				const abook = newBooks.map((newbook) => {
+				const newListB = [];
+				newBooks.forEach((book, indx) => {
+					if (indx < 12) {
+						newListB.push(book);
+					}
+				});
+				const abook = newListB.map((newbook) => {
 					return renderBook(newbook);
 				});
 				showBook.innerHTML = abook.join(" ");
@@ -219,7 +233,7 @@ fetchBooks()
 // console.log(dtBooks);
 
 const filterY = function (books, year) {
-	return books.filter((book) => book.YearPub === year);
+	return books.filter((book) => book.YearPub == year);
 };
 const filterX = (books, publiser) =>
 	books.filter((book) => book.Publiser === publiser);

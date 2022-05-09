@@ -37,7 +37,7 @@ fetchUsers()
 					window.location = "./index.html";
 				} else {
 					e.preventDefault();
-					alert("taikhoankhongtontai");
+					alert("Account does not exist!");
 				}
 			}
 		});
