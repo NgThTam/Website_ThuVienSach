@@ -37,7 +37,13 @@ def recommend_book(id_book):
     res = pd.DataFrame()
     res['ISBN'] = ids.index.values
     res = pd.merge(res, books_df, left_on="ISBN", right_on="ISBN")
-    return res['ISBN']
+    return res['ISBN'].tolist()
 
 
 print(recommend_book('0060096195'))
+
+# lấy dữ liệu gợi ý
+# reco = pd.DataFrame()
+# reco['ISBN'] = df.columns
+# reco['recomend'] = reco['ISBN'].apply(recommend_book)
+# reco.to_json("RS.json", orient = "records", date_format = "epoch", double_precision = 10, force_ascii = True, date_unit = "ms", default_handler = None)
