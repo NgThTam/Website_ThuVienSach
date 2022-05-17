@@ -47,3 +47,54 @@ print(recommend_book('0060096195'))
 # reco['ISBN'] = df.columns
 # reco['recomend'] = reco['ISBN'].apply(recommend_book)
 # reco.to_json("RS.json", orient = "records", date_format = "epoch", double_precision = 10, force_ascii = True, date_unit = "ms", default_handler = None)
+
+# Đánh giá mô hình
+# Chọn những người dùng đọc các quyển sách xuất bản năm 2000
+df_test = pd.merge(book_ratings_df, books_df, left_on='ISBN', right_on='ISBN')
+User_reading = df_test[df_test['Year-Of-Publication'] == 2000]
+User_reading = User_reading[["ISBN", "User-ID",
+                             "Book-Rating", "Year-Of-Publication"]]
+# Loại bỏ những quyển sách có đánh giá 0
+User_reading = User_reading[User_reading['Book-Rating'] != 0]
+# Loại bỏ quyển sách có ít hơn 30 người đọc
+ISBN = User_reading['ISBN'].value_counts()
+User_reading['num'] = [ISBN[val] for val in User_reading['ISBN'].values]
+User_reading = User_reading[User_reading['num'] >= 30]
+# Loại các người dùng đọc ít hơn 10 quyển sách
+User_ID = User_reading['User-ID'].value_counts()
+User_reading['num_read'] = [User_ID[val]
+                            for val in User_reading['User-ID'].values]
+User_reading = User_reading[User_reading['num_read'] >= 10]
+ISBNs = User_reading['ISBN'].unique()
+User_IDs = User_reading['User-ID'].unique()
+# Kết quả thu được 6 người dùng và 69 quyển sách, đây là sẽ tập test
+print(len(ISBNs), len(User_IDs))
+Book_of_User = {}
+for user in User_IDs:
+    Book_of_User[user] = User_reading[User_reading['User-ID']
+                                      == user]['ISBN'].values
+# Ta sẽ tiến hành kiểm tra bằng cách lấy quyển sách của 1 người dùng trong tập test tiến hành gợi ý cho sản phẩm đó, nếu tập gợi ý có chứa ít nhất 1 quyển mà người dùng đó đã đọc nằm ngoài tập test thì xem là gợi ý đúng.
+df.drop(User_IDs, axis=0, inplace=True)
+# Tiến hành kiểm tra
+total = 0
+for user in User_IDs:
+    List_Book = Book_of_User[user].tolist()
+    recommend_right = []
+    recommend_wrong = []
+    for book in List_Book:
+        recommend = recommend_book(book)
+        recommend = recommend['ISBN'].values
+        BOOKS = book_ratings_df[book_ratings_df['User-ID']
+                                == 95359]['ISBN'].values
+        for val in recommend:
+            if val in BOOKS:
+                recommend_right.append(val)
+            else:
+                recommend_wrong.append(val)
+    recommend_right = list(dict.fromkeys(recommend_right))
+    recommend_wrong = list(dict.fromkeys(recommend_wrong))
+    total += len(recommend_right) / \
+        (len(recommend_right) + len(recommend_wrong))
+
+# Độ chính xác
+print(total / len(User_IDs))
