@@ -12,7 +12,7 @@ fetch("./data/Books.json")
 	.then((response) => response.json())
 	.then((dataBooks) => {
 		const addbooks = async () => {
-			for (let i = 106; i <= 1000; i++) {
+			for (let i = 1; i <= 100; i++) {
 				const addbook = await addDoc(collection(db, "books"), {
 					IDb: dataBooks[i].ISBN,
 					NameB: dataBooks[i]["Book-Title"],
